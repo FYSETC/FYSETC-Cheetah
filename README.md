@@ -121,7 +121,7 @@ Power the board with power supply and connect the board to your PC with USB cabl
 
 Double the click "FlyMcu.exe" software to open it.
 
-![1561100540118](images/AIO_f3.png)
+![1561100540118](images/Flymcu界面.png)
 
 
 
