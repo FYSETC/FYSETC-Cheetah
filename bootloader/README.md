@@ -12,7 +12,7 @@ This method only works in windows system. You can follow the following steps to 
 
 - Power the board with power supply and connect the board to your PC with USB cable
 
-- Double the click "FlyMcu.exe" software
+- Double the click `FlyMcu.exe` software
 
 ![image-20210706170320150](images/Flymcu.png)
 
@@ -21,7 +21,7 @@ This method only works in windows system. You can follow the following steps to 
 - Click "Port" to select the port of your USB 
 
 
-- Select `Bootloader-STM32F103.hex` in the `Code File For Online ISP:` edit box. There is bootloader file named `Bootloader-STM32F103.hex` beside this `README` file. 
+- Select `Bootloader-Cheetah.hex` in the `Code File For Online ISP:` edit box. There is bootloader file named `Bootloader-Cheetah.hex` beside this `README` file. 
 
 
 - At last, click  `Start ISP(p)` button to upload the firmware.
@@ -29,11 +29,11 @@ This method only works in windows system. You can follow the following steps to 
 
 ### Method 2 : Upload the bootloader(linux)
 
-This method only works in linux system.
+This method only works in Linux system.
 
 #### Load usb driver
 
-Delete the old version driver /lib/modules/$(uname -r)/kernel/drivers/usb/serial/ch341.ko
+Delete the old version driver `/lib/modules/$(uname -r)/kernel/drivers/usb/serial/ch341.ko`
 
 ```
 rm /lib/modules/$(uname -r)/kernel/drivers/usb/serial/ch341.ko
@@ -43,11 +43,11 @@ Download the CH34x driver(linux version) from our github
 
 https://github.com/FYSETC/CH340-Driver
 
-follow the readme.txt to make and load the driver .
+follow the `readme.txt` to make and load the driver .
 
-If you want the driver load automatically every time your PC power up. You can copy the ch34x.ko file to 
+If you want the driver load automatically every time your PC power up. You can copy the `ch34x.ko` file to 
 
-directory /lib/modules/$(uname -r)/kernel/drivers/usb/serial/ , and do
+directory `/lib/modules/$(uname -r)/kernel/drivers/usb/serial/` , and do
 
 ```
 depmod 
@@ -77,10 +77,10 @@ And you will get message like
 
 the ttyUSB0 is the port to communicate with the motherboard.
 
-And then go the the firmware.hex file location directory and do the follow command to upload the firmware
+And then go the `Bootloader-Cheetah.hex` file location directory and do the follow command to upload the firmware
 
 ```
- stm32flash -w Bootloader-STM32F103.hex -v -i rts,-dtr /dev/ttyUSB0
+ stm32flash -w Bootloader-Cheetah.hex -v -i rts,-dtr /dev/ttyUSB0
 ```
 
 ## Follow-up work
