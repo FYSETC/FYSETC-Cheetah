@@ -79,11 +79,11 @@ Designed for a single-head 3D printer, many interfaces are reserved for more fea
 
 The FYSETC CHEETAH firmware is pre-config for ENDER3 machine, if you want to change the firmware or compile the code yourself , follow the steps.
 
-#### Download Vscode + platformio
+### Download Vscode + platformio
 
 To compile the firmware , you need to install Visual Studio Code and the platformio pulg-in.
 
-#### Download firmware
+### Download firmware
 
 You can download the firmware from
 
@@ -93,7 +93,7 @@ Cheetah V12 : https://github.com/FYSETC/Marlin-2.0.x-FYSETC/tree/CHEETAH/V12
 
 And if you want to know what we have changed , we recommend to use git to get the code .
 
-#### Compile the firmware
+### Compile the firmware
 
 Open Vscode and open platformio main page and click the "Open Project" button , and direct to the folder where you put your firmware.
 
@@ -101,41 +101,64 @@ Open Vscode and open platformio main page and click the "Open Project" button , 
 
 If everything goes fine , at the bottom you can see several buttons
 
-![1561099546202](images/AIO_f2.png)
+![1561099546202](images\AIO_f2.png)
 
 Just click check mark to compile.
 
 If you generate the hex file fail you may need to open vscode using Administrator Account .
 
-#### Upload the firmware(windows,linux,Mac)
+### Upload the firmware
 
-We provide several ways to upload the firmware .You can just click the upload button to upload the firmware or refer to the two methods below.
+We provide several ways to upload the firmware .
 
-#### Upload the firmware(windows)
+#### Method 1:  Upload the firmware with sdcard
 
-After compiling , you should see the firmware file "firmware.hex" in the folder FIRMWARE_LOCATE\Marlin\Marlin\\.pio\build\STM32F103RC_fysetc\
+You need a bootloader first, please follow the README [here](https://github.com/FYSETC/FYSETC-Cheetah/tree/master/bootloader).
 
-Download the flash software in our github https://github.com/FYSETC/STM32Flasher
+#### Method 2: Upload the firmware(windows,linux,Mac) - for Marlin
 
-Power the board with power supply and connect the board to your PC with USB cable (This step should before you open the software)
+This method only works for Marlin. You can just click the upload button in platformio to upload the firmware.
 
-Double the click "FlyMcu.exe" software to open it.
+![1561099546202](images\AIO_f2_1.png)
 
-![1561100540118](images/Flymcu界面.png)
+#### Method 3: Upload the firmware(windows)
 
+This method only works in windows system. 
 
+After compiling , you should see the firmware file `firmware.hex` in the folder `FIRMWARE_LOCATE\Marlin\Marlin\.pio\build\STM32F103RC_fysetc\`
 
-Select "Reset@RTS High(>+3v),ISP @DTR High"
+You can follow the following steps to upload the bootloader.
 
-Click "Port" to select the port of your USB 
+- Download the flash software in our github https://github.com/FYSETC/STM32Flasher
 
-Select FIRMWARE_LOCATE\Marlin\Marlin\\.pio\build\STM32F103RC_fysetc\\firmware.hex.
+- Power the board with power supply and connect the board to your PC with USB cable
 
-At last , "Start ISP(p)" to upload the firmware.
+- Double the click "FlyMcu.exe" software
 
-#### Upload the firmware(linux)
+![image-20210706170320150](images/Flymcu.png)
 
-##### Load usb driver
+- Select `Reset@DTR low(<-3v),ISP @RTS High`
+
+- Click "Port" to select the port of your USB 
+
+- Select `Bootloader-STM32F103.hex` in the `Code File For Online ISP:` edit box. There is bootloader file named `Bootloader-STM32F103.hex` beside this `README` file. 
+
+- At last, click  `Start ISP(p)` button to upload the firmware.
+
+#### Method 4: Upload the firmware(Klipper)
+
+This method is only for Klipper firmware. According to the method from Klipper config file for Cheetah [here](https://github.com/KevinOConnor/klipper/blob/master/config/generic-fysetc-cheetah-v1.1.cfg) and [here](https://github.com/KevinOConnor/klipper/blob/master/config/generic-fysetc-cheetah-v1.2.cfg). You can run the command
+
+```
+stm32flash -w out/klipper.bin -v -i rts,-dtr,dtr /dev/ttyUSB0
+```
+
+#### Method 5: Upload the firmware(linux)
+
+This method only works in Linux system.
+
+- ##### Load usb driver
+
 
 Delete the old version driver /lib/modules/$(uname -r)/kernel/drivers/usb/serial/ch341.ko
 
@@ -157,7 +180,8 @@ directory /lib/modules/$(uname -r)/kernel/drivers/usb/serial/ , and do
 depmod 
 ```
 
-##### Install stm32flash tool
+- ##### Install stm32flash tool
+
 
 First get the code
 
@@ -167,7 +191,8 @@ git clone https://git.code.sf.net/p/stm32flash/code stm32flash-code
 
 Then follow the INSTALL file to install the software
 
-##### Upload the firmware
+- ##### Upload the firmware
+
 
 Connect the motherboard with USB cable and your PC. And do
 
@@ -181,13 +206,11 @@ And you will get message like
 
 the ttyUSB0 is the port to communicate with the motherboard.
 
-And then go the the firmware.hex file location directory and do the follow command to upload the firmware
+And then go the `firmware.hex` file location directory and do the follow command to upload the firmware
 
 ```
  stm32flash -w firmware.hex -v -i rts,-dtr /dev/ttyUSB0
 ```
-
-
 
 ## Version：
 ----------------
