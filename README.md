@@ -101,7 +101,7 @@ Open Vscode and open platformio main page and click the "Open Project" button , 
 
 If everything goes fine , at the bottom you can see several buttons
 
-![1561099546202](images\AIO_f2.png)
+![1561099546202](images/AIO_f2.png)
 
 Just click check mark to compile.
 
@@ -119,7 +119,7 @@ You need a bootloader first, please follow the README [here](https://github.com/
 
 This method only works for Marlin. You can just click the upload button in platformio to upload the firmware.
 
-![1561099546202](images\AIO_f2_1.png)
+![1561099546202](images/AIO_f2_1.png)
 
 #### Method 3: Upload the firmware(windows)
 
