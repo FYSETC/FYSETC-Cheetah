@@ -14,7 +14,7 @@ This method only works in windows system. You can follow the following steps to 
 
 - Double the click "FlyMcu.exe" software
 
-![image-20210706170320150](images\Flymcu.png)
+![image-20210706170320150](images/Flymcu.png)
 
 - Select `Reset@DTR low(<-3v),ISP @RTS High`
 
@@ -124,7 +124,7 @@ And then rebuild the firmware.
 
 You need to select `20KiB bootloader`
 
-![image-20210706172642480](images\klipper.png)
+![image-20210706172642480](images/klipper.png)
 
 ## Upload firmware with sdcard
 
