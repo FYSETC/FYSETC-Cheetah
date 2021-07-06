@@ -125,7 +125,7 @@ Double the click "FlyMcu.exe" software to open it.
 
 
 
-Select "Reset@DTR low(<-3v),ISP @RTS High"
+Select "Reset@RTS High(>+3v),ISP @DTR High"
 
 Click "Port" to select the port of your USB 
 
