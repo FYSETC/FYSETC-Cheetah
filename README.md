@@ -77,13 +77,15 @@ Designed for a single-head 3D printer, many interfaces are reserved for more fea
 
 ---
 
+### Marlin
+
 The FYSETC CHEETAH firmware is pre-config for ENDER3 machine, if you want to change the firmware or compile the code yourself , follow the steps.
 
-### Download Vscode + platformio
+#### Download Vscode + platformio
 
 To compile the firmware , you need to install Visual Studio Code and the platformio pulg-in.
 
-### Download firmware
+#### Download firmware
 
 You can download the firmware from
 
@@ -93,7 +95,7 @@ Cheetah V12 : https://github.com/FYSETC/Marlin-2.0.x-FYSETC/tree/CHEETAH/V12
 
 And if you want to know what we have changed , we recommend to use git to get the code .
 
-### Compile the firmware
+#### Compile the firmware
 
 Open Vscode and open platformio main page and click the "Open Project" button , and direct to the folder where you put your firmware.
 
@@ -106,6 +108,18 @@ If everything goes fine , at the bottom you can see several buttons
 Just click check mark to compile.
 
 If you generate the hex file fail you may need to open vscode using Administrator Account .
+
+### Klipper
+
+#### Compile firmware
+
+![image-20210707105817241](images/klipper_menuconfig.png)
+
+If you want to use sdcard bootloader, you can follow the instructions [here](https://github.com/FYSETC/FYSETC-Cheetah/tree/master/bootloader).
+
+After you upload the firmware, please power down Cheetah first, then power on again.  And use the following octoprint parameter.
+
+![image-20210707110514671](images/octoprint_serial.png)
 
 ### Upload the firmware
 

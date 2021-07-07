@@ -124,7 +124,11 @@ And then rebuild the firmware.
 
 You need to select `20KiB bootloader`
 
-![image-20210706172642480](images/klipper.png)
+![](images/klipper.png)
+
+**After you upload the firmware, please power down Cheetah first, then power on again.  And use the following octoprint parameter.**
+
+![image-20210707110514671](images/octoprint_serial.png)
 
 ## Upload firmware with sdcard
 
@@ -137,3 +141,4 @@ After you upload the bootloader and build the firmware, now you can upload it to
 5. And wait for 10~20 seconds (larger the firmware, more time need), it will be done. 
 
 You can check if the `firmware.bin` file in the sdcard been changed to `old.bin`, if so, means success.
+
