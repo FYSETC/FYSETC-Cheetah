@@ -57,7 +57,7 @@ Designed for a single-head 3D printer, many interfaces are reserved for more fea
 | CPU Speed ( MHz )    | 72 Mhz                                        |
 | Stepper driver       | 4X TMC2209 (V1.2 = 2208) |
 | Stepper driver  Type              | Onboard               |
-| Input| 7-35 V 20A Max；|
+| Input| 12v/24v |
 | Output| BED OUT：10A Max ；Heater Out：5A Max            |
 
 ## Connectors and jumpers define(V1.1)
