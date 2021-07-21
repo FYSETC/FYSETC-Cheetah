@@ -85,15 +85,51 @@ The FYSETC CHEETAH firmware is pre-config for ENDER3 machine, if you want to cha
 
 To compile the firmware , you need to install Visual Studio Code and the platformio pulg-in.
 
-#### Download firmware
+#### Firmware code
 
-You can download the firmware from
+You have two code source choices :
 
-Cheetah V11 : https://github.com/FYSETC/Marlin-2.0.x-FYSETC/tree/CHEETAH/V11
+##### Source 1
 
-Cheetah V12 : https://github.com/FYSETC/Marlin-2.0.x-FYSETC/tree/CHEETAH/V12
+You can get Marlin code is in the `firmware/Marlin` folder in this repository [github](https://github.com/FYSETC/FYSETC-Cheetah/tree/master/firmware/Marlin) or [gitee](https://gitee.com/fysetc/FYSETC-Cheetah/tree/master/firmware/Marlin). 
 
-And if you want to know what we have changed , we recommend to use git to get the code .
+And change `MOTHERBOARD` define according to your cheetah board version in `Configuration.h`
+
+Cheetah v1.1x
+
+```
+#define MOTHERBOARD BOARD_FYSETC_CHEETAH
+```
+
+Cheetah v1.2x
+
+```
+#define MOTHERBOARD BOARD_FYSETC_CHEETAH_V12
+```
+
+##### Source 2
+
+Also you can get upstream branch from [github](https://github.com/MarlinFirmware/Marlin) or [gitee](https://gitee.com/fysetc/Marlin). But remember to change `default_envs` in `platformio.ini` file.
+
+```
+default_envs = STM32F103RC_fysetc
+```
+
+And change `MOTHERBOARD` define according to your cheetah board version in `Configuration.h`
+
+Cheetah v1.1x
+
+```
+#define MOTHERBOARD BOARD_FYSETC_CHEETAH
+```
+
+Cheetah v1.2x
+
+```
+#define MOTHERBOARD BOARD_FYSETC_CHEETAH_V12
+```
+
+You'd better change your configuration base on the configuration on [github](https://github.com/MarlinFirmware/Configurations/tree/import-2.0.x/config/examples/Creality/Ender-3/FYSETC%20Cheetah) or [gitee]([FYSETC/Configurations - Gitee](https://gitee.com/fysetc/Configurations/tree/import-2.0.x/config/examples/Creality/Ender-3/FYSETC Cheetah 1.2)).
 
 #### Compile the firmware
 
@@ -107,7 +143,7 @@ If everything goes fine , at the bottom you can see several buttons
 
 Just click check mark to compile.
 
-If you generate the hex file fail you may need to open vscode using Administrator Account .
+Note: If you generate the hex file fail you may need to open vscode using Administrator Account .
 
 ### Klipper
 
@@ -115,7 +151,7 @@ If you generate the hex file fail you may need to open vscode using Administrato
 
 ![image-20210707105817241](images/klipper_menuconfig.png)
 
-If you want to use sdcard bootloader, you can follow the instructions [here](https://github.com/FYSETC/FYSETC-Cheetah/tree/master/bootloader).
+If you want to use sdcard bootloader, you can follow the instructions [github](https://github.com/FYSETC/FYSETC-Cheetah/tree/master/bootloader) or [gitee](https://gitee.com/fysetc/FYSETC-Cheetah/tree/master/bootloader).
 
 After you upload the firmware, please power down Cheetah first, then power on again.  And use the following octoprint parameter.
 
@@ -127,7 +163,7 @@ We provide several ways to upload the firmware .
 
 #### Method 1:  Upload the firmware with sdcard
 
-You need a bootloader first, please follow the README [here](https://github.com/FYSETC/FYSETC-Cheetah/tree/master/bootloader).
+You need to upload `bootloader` first, please follow the `README` in `bootloader` folder in this repository. Well, link is [github](https://github.com/FYSETC/FYSETC-Cheetah/tree/master/bootloader) or [gitee](https://gitee.com/fysetc/FYSETC-Cheetah/tree/master/bootloader).
 
 #### Method 2: Upload the firmware(windows,linux,Mac) - for Marlin
 
@@ -143,7 +179,7 @@ After compiling , you should see the firmware file `firmware.hex` in the folder 
 
 You can follow the following steps to upload the bootloader.
 
-- Download the flash software in our github https://github.com/FYSETC/STM32Flasher
+- Download the flash software in our [github](https://github.com/FYSETC/STM32Flasher) or [gitee](https://gitee.com/fysetc/STM32Flasher).
 
 - Power the board with power supply and connect the board to your PC with USB cable
 
@@ -180,11 +216,9 @@ Delete the old version driver /lib/modules/$(uname -r)/kernel/drivers/usb/serial
 rm /lib/modules/$(uname -r)/kernel/drivers/usb/serial/ch341.ko
 ```
 
-Download the CH34x driver(linux version) from our github
+Download the CH34x driver(linux version) from our [github](https://github.com/FYSETC/CH340-Driver) or [gitee](https://gitee.com/fysetc/CH340-Driver).
 
-https://github.com/FYSETC/CH340-Driver
-
-follow the readme.txt to make and load the driver .
+Follow the `readme.txt` to make and load the driver.
 
 If you want the driver load automatically every time your PC power up. You can copy the ch34x.ko file to 
 
@@ -305,8 +339,3 @@ For new firmware,the default config is not for cheetah board anymore as we have 
 
 ---
 Please submit any technical issue into our [forum](http://forum.fysetc.com/) 
-
-
-```
-
-```

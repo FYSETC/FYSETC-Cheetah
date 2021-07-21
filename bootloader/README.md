@@ -134,11 +134,11 @@ You need to select `20KiB bootloader`
 
 After you upload the bootloader and build the firmware, now you can upload it to the board with sdcard
 
-1. Copy the `firmware.bin`(if you use `Klipper` firmware, please rename `klipper.bin` to `firmware.bin`) to the SD card , you need to be sure the firmware name is `firmware.bin`. 
+1. Copy the `firmware.bin`( if you use `Klipper` firmware, please rename `klipper.bin` to `firmware.bin`) file to the SD card , you need to be sure the firmware name is `firmware.bin`. 
 2. And then power off the machine.
 3. Insert the SD card to the board.
 4. Power on the machine. 
-5. And wait for 10~20 seconds (larger the firmware, more time need), it will be done. 
+5. And wait for 20~40 seconds (larger the firmware, more time need), it will be done. 
 
-You can check if the `firmware.bin` file in the sdcard been changed to `old.bin`, if so, means success.
+You can check if the `firmware.bin` file in the sdcard have been changed to `old.bin`, if so, means success. if not: Try to upload the `bootloader` again or open an issue in our [github](https://github.com/FYSETC/FYSETC-Cheetah/issues).
 
