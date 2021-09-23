@@ -37,7 +37,10 @@ Designed for a single-head 3D printer, many interfaces are reserved for more fea
 - CNC Device
 - Other similar machines
 
-## Hardware Reasources
+## Hardware
+
+### Hardware Reasources
+
 ---
 
 | Board Name           | Cheetah                                              |
@@ -60,18 +63,108 @@ Designed for a single-head 3D printer, many interfaces are reserved for more fea
 | Input| 12v/24v |
 | Output| BED OUT：10A Max ；Heater Out：5A Max            |
 
-## Connectors and jumpers define(V1.1)
+### Connectors and jumpers define(V1.1)
 ---
 ![Cheetah_connectors](images/Cheetah_connector.png)
 ![Cheetah_jumpers](images/Cheetah_jumpers.png)
 
-## Connectors and jumpers define(V1.2)
+### Connectors and jumpers define(V1.2)
 
+Not available.
 
+### Pin Definition
 
+#### Cheetah V1.1
 
+<table>
+   <tr><td>Features</td><td>Cheetah Pin</td><td>STM32 Pin</td><td>Pin No.</td><td>Comment</td></tr>
+   <tr><td rowspan="3">X-MOTOR(1)</td><td>X-Step</td><td>PB8</td><td>61</td><td></td></tr>
+   <tr><td>X-DIR</td><td>PB9</td><td>62</td><td></td></tr>
+   <tr><td>X-EN</td><td>PA8</td><td>41</td><td></td></tr>
+   <tr><td rowspan="3">Y-MOTOR(2)</td><td>Y-Step</td><td>PB2</td><td>28</td><td></td></tr>
+   <tr><td>Y-DIR</td><td>PB3</td><td>55</td><td></td></tr>
+   <tr><td>Y-EN</td><td>PB1</td><td>27</td><td></td></tr>
+   <tr><td rowspan="3">Z-MOTOR(3)</td><td>Z-Step</td><td>PC0</td><td>8</td><td></td></tr>
+   <tr><td>Z-DIR</td><td>PC1</td><td>9</td><td></td></tr>
+   <tr><td>Z-EN</td><td>PC2</td><td>10</td><td></td></tr>
+   <tr><td rowspan="3">E0-MOTOR(4)</td><td>E0-Step</td><td>PC15</td><td>4</td><td></td></tr>
+   <tr><td>E0-DIR</td><td>PC14</td><td>3</td><td></td></tr>
+   <tr><td>E0-EN</td><td>PC13</td><td>2</td><td></td></tr>
+   <tr><td rowspan="2">TMC2209 SERIAL (UART2)</td><td>TX2</td><td>PA2</td><td>16</td><td></td></tr>
+   <tr><td>RX2</td><td>PA3</td><td>17</td><td></td></tr>
+   <tr><td rowspan="3">End-stops</td><td>X-MIN</td><td>PA1</td><td>15</td><td></td></tr>
+   <tr><td>Y-MIN</td><td>PB4</td><td>56</td><td></td></tr>
+   <tr><td>Z-MIN</td><td>PA15</td><td>50</td><td></td></tr>
+   <tr><td rowspan="1">FAN</td><td>FAN0</td><td>PC8</td><td>39</td><td></td></tr>
+   <tr><td rowspan="3">RGB</td><td>LED-R</td><td>PB0</td><td>26</td><td>Can be used for fan1</td></tr>
+   <tr><td>LED-G</td><td>PB7</td><td>59</td><td>Can be used for fan2</td></tr>
+   <tr><td>LED-B</td><td>PB6</td><td>58</td><td>Can be used for fan3</td></tr>
+   <tr><td rowspan="2">Heating</td><td>E0-Heater</td><td>PC6</td><td>37</td><td></td></tr>
+   <tr><td>Heated-Bed</td><td>PC7</td><td>38</td><td></td></tr>
+   <tr><td rowspan="2">Temperature</td><td>TE0</td><td>PC4</td><td>15</td><td></td></tr>
+   <tr><td>TB</td><td>PC5</td><td>18</td><td></td></tr>
+   <tr><td rowspan="8">EXP1</td><td>BEEP</td><td>PC9</td><td>40</td><td></td></tr>
+   <tr><td>BTN_ENC</td><td>PC12</td><td>53</td><td></td></tr>
+   <tr><td>BTN_EN2</td><td>PC11</td><td>52</td><td></td></tr>
+   <tr><td>MISO</td><td>PA6/MISO2</td><td>22</td><td></td></tr>
+   <tr><td>BTN_EN1</td><td>PC10</td><td>51</td><td></td></tr>
+   <tr><td>SCK</td><td>PA5/SCK2</td><td>21</td><td></td></tr>
+   <tr><td>CS</td><td>PA4</td><td>20</td><td></td></tr>
+   <tr><td>MOSI</td><td>PA7/MOSI2</td><td>23</td><td></td></tr>
+   <tr><td rowspan="2">UART</td><td>TX</td><td>PA9/TX1</td><td>42</td><td></td></tr>
+   <tr><td>RX</td><td>PA10/RX1</td><td>43</td><td></td></tr>
+   <tr><td rowspan="2">I2C</td><td>I2C2 SCL</td><td>PB10</td><td>29</td><td></td></tr>
+   <tr><td>I2C2 SDA</td><td>PB11</td><td>30</td><td></td></tr>
+   <tr><td rowspan="3">SWD Debug</td><td>SWDIO</td><td>PA13</td><td>72</td><td>only used for debugging now and can be used for other purposes.</td></tr>
+   <tr><td>SWCLK</td><td>PA14</td><td>76</td><td>only used for debugging now and can be used for other purposes.</td></tr>
+</table>
 
+#### Cheetah V1.2
 
+<table>
+   <tr><td>Features</td><td>Cheetah Pin</td><td>STM32 Pin</td><td>Pin No.</td><td>Comment</td></tr>
+   <tr><td rowspan="3">X-MOTOR(1)</td><td>X-Step</td><td>PB8</td><td>61</td><td></td></tr>
+   <tr><td>X-DIR</td><td>PB9</td><td>62</td><td></td></tr>
+   <tr><td>X-EN</td><td>PA8</td><td>41</td><td></td></tr>
+   <tr><td rowspan="3">Y-MOTOR(2)</td><td>Y-Step</td><td>PB2</td><td>28</td><td></td></tr>
+   <tr><td>Y-DIR</td><td>PB3</td><td>55</td><td></td></tr>
+   <tr><td>Y-EN</td><td>PB1</td><td>27</td><td></td></tr>
+   <tr><td rowspan="3">Z-MOTOR(3)</td><td>Z-Step</td><td>PC0</td><td>8</td><td></td></tr>
+   <tr><td>Z-DIR</td><td>PC1</td><td>9</td><td></td></tr>
+   <tr><td>Z-EN</td><td>PC2</td><td>10</td><td></td></tr>
+   <tr><td rowspan="3">E0-MOTOR(4)</td><td>E0-Step</td><td>PC15</td><td>4</td><td></td></tr>
+   <tr><td>E0-DIR</td><td>PC14</td><td>3</td><td></td></tr>
+   <tr><td>E0-EN</td><td>PC13</td><td>2</td><td></td></tr>
+   <tr><td rowspan="8">TMC2208 SERIAL</td><td>X TX</td><td>PA11</td><td>44</td><td></td></tr>
+   <tr><td>X RX</td><td>PA12</td><td>45</td><td></td></tr>
+   <tr><td>Y TX</td><td>PB6</td><td>58</td><td></td></tr>
+   <tr><td>Y RX</td><td>PB7</td><td>59</td><td></td></tr>
+   <tr><td>Z TX</td><td>PB10</td><td>29</td><td></td></tr>
+   <tr><td>Z RX</td><td>PB11</td><td>30</td><td></td></tr>
+   <tr><td>E TX</td><td>PA2</td><td>16</td><td></td></tr>
+   <tr><td>E RX</td><td>PA3</td><td>17</td><td></td></tr>
+   <tr><td rowspan="3">End-stops</td><td>X-MIN</td><td>PA1</td><td>15</td><td></td></tr>
+   <tr><td>Y-MIN</td><td>PB4</td><td>56</td><td></td></tr>
+   <tr><td>Z-MIN</td><td>PA15</td><td>50</td><td></td></tr>
+   <tr><td rowspan="2">FAN</td><td>FAN0</td><td>PC8</td><td>39</td><td></td></tr>
+   <tr><td>FAN1</td><td>PB0</td><td>26</td><td></td></tr>
+   <tr><td rowspan="2">Heating</td><td>E0-Heater</td><td>PC6</td><td>37</td><td></td></tr>
+   <tr><td>Heated-Bed</td><td>PC7</td><td>38</td><td></td></tr>
+   <tr><td rowspan="2">Temperature</td><td>TE0</td><td>PC4</td><td>15</td><td></td></tr>
+   <tr><td>TB</td><td>PC5</td><td>18</td><td></td></tr>
+   <tr><td rowspan="8">EXP1</td><td>BEEP</td><td>PC9</td><td>40</td><td></td></tr>
+   <tr><td>BTN_ENC</td><td>PC12</td><td>53</td><td></td></tr>
+   <tr><td>BTN_EN2</td><td>PC11</td><td>52</td><td></td></tr>
+   <tr><td>MISO</td><td>PA6/MISO2</td><td>22</td><td></td></tr>
+   <tr><td>BTN_EN1</td><td>PC10</td><td>51</td><td></td></tr>
+   <tr><td>SCK</td><td>PA5/SCK2</td><td>21</td><td></td></tr>
+   <tr><td>CS</td><td>PA4</td><td>20</td><td></td></tr>
+   <tr><td>MOSI</td><td>PA7/MOSI2</td><td>23</td><td></td></tr>
+   <tr><td rowspan="2">UART</td><td>TX</td><td>PA9/TX1</td><td>42</td><td></td></tr>
+   <tr><td>RX</td><td>PA10/RX1</td><td>43</td><td></td></tr>
+   <tr><td rowspan="3">SWD Debug</td><td>SWDIO</td><td>PA13</td><td>72</td><td>only used for debugging now and can be used for other purposes.</td></tr>
+   <tr><td>SWCLK</td><td>PA14</td><td>76</td><td>only used for debugging now and can be used for other purposes.</td></tr>
+</table>
 
 ## Firmware 
 
@@ -157,7 +250,7 @@ After you upload the firmware, please power down Cheetah first, then power on ag
 
 ![image-20210707110514671](images/octoprint_serial.png)
 
-### Upload the firmware
+#### Upload the firmware
 
 We provide several ways to upload the firmware .
 
