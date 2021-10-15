@@ -1,4 +1,4 @@
-## Product Introduction
+## 1. Product Introduction
 
 ---
 
@@ -6,7 +6,7 @@
 
 Designed for a single-head 3D printer, many interfaces are reserved for more features. Such as AC detection, filament detection, leveling with BL-touch or other sensors.
 
-## Features
+## 2. Features
 ---
 
 - Compact size: 101.5mm x 72mm，Compatible with the Creatlity ender 3 motherboard size
@@ -30,16 +30,16 @@ Designed for a single-head 3D printer, many interfaces are reserved for more fea
   - High quality, High temperature FR4-TG130 PCB
   - Gold ENIG finishing
 
-## Application
+## 3. Application
 ---
 
 - 3D printer 
 - CNC Device
 - Other similar machines
 
-## Hardware
+## 4. Hardware
 
-### Hardware Reasources
+### 4.1 Hardware Reasources
 
 ---
 
@@ -63,18 +63,18 @@ Designed for a single-head 3D printer, many interfaces are reserved for more fea
 | Input| 12v/24v |
 | Output| BED OUT：10A Max ；Heater Out：5A Max            |
 
-### Connectors and jumpers define(V1.1)
+### 4.2 Connectors and jumpers define(V1.1)
 ---
 ![Cheetah_connectors](images/Cheetah_connector.png)
 ![Cheetah_jumpers](images/Cheetah_jumpers.png)
 
-### Connectors and jumpers define(V1.2)
+### 4.3 Connectors and jumpers define(V1.2)
 
 Not available.
 
-### Pin Definition
+### 4.4 Pin Definition
 
-#### Cheetah V1.1
+#### 4.4.1 Cheetah V1.1
 
 <table>
    <tr><td>Features</td><td>Cheetah Pin</td><td>STM32 Pin</td><td>Pin No.</td><td>Comment</td></tr>
@@ -119,7 +119,7 @@ Not available.
    <tr><td>SWCLK</td><td>PA14</td><td>76</td><td>only used for debugging now and can be used for other purposes.</td></tr>
 </table>
 
-#### Cheetah V1.2
+#### 4.4.2 Cheetah V1.2
 
 <table>
    <tr><td>Features</td><td>Cheetah Pin</td><td>STM32 Pin</td><td>Pin No.</td><td>Comment</td></tr>
@@ -166,19 +166,19 @@ Not available.
    <tr><td>SWCLK</td><td>PA14</td><td>76</td><td>only used for debugging now and can be used for other purposes.</td></tr>
 </table>
 
-## Firmware 
+## 5. Firmware 
 
 ---
 
-### Marlin
+### 5.1 Marlin
 
 The FYSETC CHEETAH firmware is pre-config for ENDER3 machine, if you want to change the firmware or compile the code yourself , follow the steps.
 
-#### Download Vscode + platformio
+#### 5.1.1 Download Vscode + platformio
 
 To compile the firmware , you need to install Visual Studio Code and the platformio pulg-in.
 
-#### Firmware code
+#### 5.1.2 Firmware code
 
 You have two code source choices :
 
@@ -224,7 +224,7 @@ Cheetah v1.2x
 
 You'd better change your configuration base on the configuration on github [cheetah v1.1](https://github.com/MarlinFirmware/Configurations/tree/import-2.0.x/config/examples/Creality/Ender-3/FYSETC%20Cheetah)/[cheetah v1.2](https://github.com/MarlinFirmware/Configurations/tree/import-2.0.x/config/examples/Creality/Ender-3/FYSETC%20Cheetah%201.2) or gitee [cheetah v1.1](https://gitee.com/fysetc/Configurations/tree/import-2.0.x/config/examples/Creality/Ender-3/FYSETC%20Cheetah)/[cheetah v1.2](https://gitee.com/fysetc/Configurations/tree/import-2.0.x/config/examples/Creality/Ender-3/FYSETC%20Cheetah%201.2).
 
-#### Compile the firmware
+#### 5.1.3 Compile the firmware
 
 Open Vscode and open platformio main page and click the "Open Project" button , and direct to the folder where you put your firmware.
 
@@ -238,9 +238,15 @@ Just click check mark to compile.
 
 Note: If you generate the hex file fail you may need to open vscode using Administrator Account .
 
-### Klipper
+### 5.2 Klipper
 
-#### Compile firmware
+#### 5.2.1 Requirement
+
+Our Cheetah board have CH341 chip, so you may need to install its driver. There are a lot of CH341 driver if you search on the internet, links below may help.
+
+[Ch34x](https://github.com/gorgiaxx/CH34x-Driver-Linux)
+
+#### 5.2.2 Compile firmware
 
 ![image-20210707105817241](images/klipper_menuconfig.png)
 
@@ -250,7 +256,7 @@ After you upload the firmware, please power down Cheetah first, then power on ag
 
 ![image-20210707110514671](images/octoprint_serial.png)
 
-#### Upload the firmware
+### 5.3 Upload the firmware
 
 We provide several ways to upload the firmware .
 
@@ -353,7 +359,7 @@ And then go the `firmware.hex` file location directory and do the follow command
  stm32flash -w firmware.hex -v -i rts,-dtr /dev/ttyUSB0
 ```
 
-## Version：
+## 6. Version
 ----------------
 V1.1：
 
@@ -374,37 +380,37 @@ V1.2b：
 1. Fix some silks mark
 2. Update MOSFET drive circuit
 
-## FAQ：
+## 7. FAQ：
 
 --------------------
 
-#### 1.Why use USB-TO-UART chip for USB？
+### 1. Why use USB-TO-UART chip for USB？
 
 We just want to give you a convenient way to update the firmware without having to think about which bootloader to use and how to jumper BOOT0&BOOT1.
 Also, if your board is already installed in the machine, the jumper setting is more inconvenient for you.
 So, by adding a chip that can solve the problem, why not do it?
 
-#### 2.Why does the USB power flow back to the PSU?
+### 2. Why does the USB power flow back to the PSU?
 
 At the time of design, we thought that plugging in the USB is just to update the firmware, and at other times you will use the SD card for printing. Even if you use USB printing, it should be a short-time debugging.
 Even, we found that most of the 2560 boards did the same, and nothing went wrong. This should be a way of testing over time.
 Until TH3D promotes this problem in the whole world, I think this will cause confusion for many people, so I will solve this problem whether or not it will cause problems, and it was already solved on the 1.2a version.
 
-#### 3.The direction of the encoder is wrong？
+### 3. The direction of the encoder is wrong？
 
 First of all, this is not a hardware problem, we can adjust it through software, and it is very easy.
 Secondly, there is no fixed standard in this direction, and different people may not like the same.
 Finally, we have changed to the most favorite way, if you want to reverse, you can also set the firmware yourself.
 ***Note: In fact, our price is only the price of a hardware platform, we have never calculated the value of software, we think that as one of the contributors and users of marlin, we should follow the spirit of open source, make more people easier Get the convenience of open source. Instead of selling it with open source resources.***
 
-#### 4.The screen displays garbled characters？
+### 4. The screen displays garbled characters？
 
 First of all, we should know that low-voltage signals are easily interfered, so we should try to avoid the screen line and the high-voltage and high-current lines being too close.
 In addition, our people usually have static electricity on their hands, and directly touch some electronic components, which may also affect normal signal transmission.
 So if it is just an accidental phenomenon and it will disappear after re-power, then don't worry.
 If it has been there, please contact us and we will deal with it according to the specific situation!
 
-#### 5.Y-motor got very hot
+### 5. Y-motor got very hot
 
 Actually there is an inappropriate firmware configuration.
 You need to change
@@ -418,7 +424,7 @@ to 
 ```
  #define CHOPPER_TIMING CHOPPER_DEFAULT_24V
 ```
-#### 6.Can't save config to eeprom
+### 6. Can't save config to eeprom
 This is a firmware issue that has been fixed so far, you can fix it by upgrading the firmware.
 For new firmware,the default config is not for cheetah board anymore as we have other boards to release and the need to build the firmware, you need to change default_envs to fysetc_STM32F1 in platformio.ini file and replace the configuration.h and configuration_adv.h file with FYSETC example config. 
 
@@ -426,9 +432,7 @@ For new firmware,the default config is not for cheetah board anymore as we have 
 
 **We will continue to update, please look forward to it!***
 
-
-
-## Tech Support
+## 8. Tech Support
 
 ---
 Please submit any technical issue into our [forum](http://forum.fysetc.com/) 
