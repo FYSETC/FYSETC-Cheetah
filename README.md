@@ -276,7 +276,7 @@ This method only works in windows system.
 
 After compiling , you should see the firmware file `firmware.hex` in the folder `FIRMWARE_LOCATE\Marlin\Marlin\.pio\build\STM32F103RC_fysetc\`
 
-You can follow the following steps to upload the bootloader.
+You can follow the following steps to upload the firmware.
 
 - Download the flash software in our [github](https://github.com/FYSETC/STM32Flasher) or [gitee](https://gitee.com/fysetc/STM32Flasher).
 
@@ -290,7 +290,7 @@ You can follow the following steps to upload the bootloader.
 
 - Click "Port" to select the port of your USB 
 
-- Select `Bootloader-STM32F103.hex` in the `Code File For Online ISP:` edit box. There is bootloader file named `Bootloader-STM32F103.hex` beside this `README` file. 
+- Select `firmware.hex` in the `Code File For Online ISP:` edit box. This the firmware you built. There is pre-build firmware file named `klipper.hex` on [github](https://github.com/FYSETC/FYSETC-Cheetah/tree/master/firmware/Klipper/Cheetah-v1.2) or [gitee](https://gitee.com/fysetc/FYSETC-Cheetah/tree/master/firmware/Klipper/Cheetah-v1.2). If you use marlin, pre-build firmware is on [github](https://github.com/FYSETC/FYSETC-Cheetah/tree/master/examples/Ender-3) or [gitee](https://gitee.com/fysetc/FYSETC-Cheetah/tree/master/examples/Ender-3).
 
 - At last, click  `Start ISP(p)` button to upload the firmware.
 
