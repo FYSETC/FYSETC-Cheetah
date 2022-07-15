@@ -7,30 +7,39 @@
 Designed for a single-head 3D printer, many interfaces are reserved for more features. Such as AC detection, filament detection, leveling with BL-touch or other sensors.
 
 ## 2. Features
+
 ---
 
 - Compact size: 101.5mm x 72mm，Compatible with the Creatlity ender 3 motherboard size
 
 - fully integrated all in one solution:
+  
   - STM32F103 MCU (Run Marlin 2.0 )
   - CH340 for high speed USB serial connection 
   - (V1.1)4X TMC2209 stepper drivers, Support sensor-less homing
   - (V1.2)4X TMC2208 stepper drivers, not support sensor-less homing
 
 - UNIVERSAL POWER:
+  
   - can be used with 7V-35V for motors / heated bed
   - (V1.2)24V to 12V/2A DC-DC for fans
   - integrated high precision power regulators (DC/DC):  5V 1A Max and 3.3V  600mA Max LDO
 
 - Onboard TF card socket
+
 - EXP1 for 12864 display panel (Creality 12864 panel or FYSETC Generic12864)
+
 - Onboard RGB control (V1.2 have no RGB control)
+
 - RGB control and fan control 12V/24V optional (Requires 24V to 12V module)
+
 - PCB：
+  
   - High quality, High temperature FR4-TG130 PCB
   - Gold ENIG finishing
 
 ## 3. Application
+
 ---
 
 - 3D printer 
@@ -43,28 +52,30 @@ Designed for a single-head 3D printer, many interfaces are reserved for more fea
 
 ---
 
-| Board Name           | Cheetah                                              |
-| -------------------- | ------------------------------------------------ |
-| License              | GPL V2.0                                       |
-| Latest Version       | V1.0                                           |
-| Extruders            | 1                                                |
-| Fixed Fans           | 2 Max                                            |
-| Controlled Fans      | 1 Max                                            |
-| Heaters              | 1 Max                                            |
-| Endstops             | 3 Max                                            |
-| Temp sens            | 2 Max                                            |
-| I2C                  | 1                                                |
-| SWD                  | 1                                                |
-| Serial port chip     | CH340                                            |
-| CPU                  | STM32F103                                     |
-| CPU Speed ( MHz )    | 72 Mhz                                        |
-| Stepper driver       | 4X TMC2209 (V1.2 = 2208) |
-| Stepper driver  Type              | Onboard               |
-| Input| 12v/24v |
-| Output| BED OUT：10A Max ；Heater Out：5A Max            |
+| Board Name           | Cheetah                            |
+| -------------------- | ---------------------------------- |
+| License              | GPL V2.0                           |
+| Latest Version       | V1.0                               |
+| Extruders            | 1                                  |
+| Fixed Fans           | 2 Max                              |
+| Controlled Fans      | 1 Max                              |
+| Heaters              | 1 Max                              |
+| Endstops             | 3 Max                              |
+| Temp sens            | 2 Max                              |
+| I2C                  | 1                                  |
+| SWD                  | 1                                  |
+| Serial port chip     | CH340                              |
+| CPU                  | STM32F103                          |
+| CPU Speed ( MHz )    | 72 Mhz                             |
+| Stepper driver       | 4X TMC2209 (V1.2 = 2208)           |
+| Stepper driver  Type | Onboard                            |
+| Input                | 12v/24v                            |
+| Output               | BED OUT：10A Max ；Heater Out：5A Max |
 
 ### 4.2 Connectors and jumpers define(V1.1)
+
 ---
+
 ![Cheetah_connectors](images/Cheetah_connector.png)
 ![Cheetah_jumpers](images/Cheetah_jumpers.png)
 
@@ -166,7 +177,7 @@ Not available.
    <tr><td>SWCLK</td><td>PA14</td><td>76</td><td>only used for debugging now and can be used for other purposes.</td></tr>
 </table>
 
-## 5. Firmware 
+## 5. Firmware
 
 ---
 
@@ -256,6 +267,10 @@ After you upload the firmware, please power down Cheetah first, then power on ag
 
 ![image-20210707110514671](images/octoprint_serial.png)
 
+### 5.2.3 printer.cfg
+
+You can change your config according to you machine base on the generic printer.cfg from Klipper [here(Cheetah_v1.1)](https://github.com/Klipper3d/klipper/blob/master/config/generic-fysetc-cheetah-v1.1.cfg) and [here(Cheetah_v.12)](https://github.com/Klipper3d/klipper/blob/master/config/generic-fysetc-cheetah-v1.2.cfg). Or our example config in `Firmware\Klipper\Cheetah**` folder [here](https://github.com/FYSETC/FYSETC-Cheetah/tree/master/firmware/Klipper/Cheetah-v1.2). 
+
 ### 5.3 Upload the firmware
 
 We provide several ways to upload the firmware .
@@ -308,7 +323,6 @@ This method only works in Linux system.
 
 - ##### Load usb driver
 
-
 Delete the old version driver /lib/modules/$(uname -r)/kernel/drivers/usb/serial/ch341.ko
 
 ```
@@ -329,7 +343,6 @@ depmod
 
 - ##### Install stm32flash tool
 
-
 First get the code
 
 ```
@@ -339,7 +352,6 @@ git clone https://git.code.sf.net/p/stm32flash/code stm32flash-code
 Then follow the INSTALL file to install the software
 
 - ##### Upload the firmware
-
 
 Connect the motherboard with USB cable and your PC. And do
 
@@ -360,7 +372,9 @@ And then go the `firmware.hex` file location directory and do the follow command
 ```
 
 ## 6. Version
+
 ----------------
+
 V1.1：
 
 1. Initial version
@@ -424,15 +438,16 @@ to 
 ```
  #define CHOPPER_TIMING CHOPPER_DEFAULT_24V
 ```
+
 ### 6. Can't save config to eeprom
+
 This is a firmware issue that has been fixed so far, you can fix it by upgrading the firmware.
 For new firmware,the default config is not for cheetah board anymore as we have other boards to release and the need to build the firmware, you need to change default_envs to fysetc_STM32F1 in platformio.ini file and replace the configuration.h and configuration_adv.h file with FYSETC example config. 
-
-
 
 **We will continue to update, please look forward to it!***
 
 ## 8. Tech Support
 
 ---
+
 Please submit any technical issue into our [forum](http://forum.fysetc.com/) 
