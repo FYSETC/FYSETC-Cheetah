@@ -7,13 +7,13 @@ This folder will contains machines that Cheetah board support. If you can't find
 We build an image base on `Armbian_20.11.6_Orangepizero_buster_current_5.10.4` mainsail OS for OrangePi-zero. You can download it from [Dropbox](https://www.dropbox.com/s/6tvu6on8kcejoij/Armbian_20.11.6_Orangepizero_buster_current_5.10.4_Cheetah_mainsail.img.ima?dl=0) and [百度云盘](https://pan.baidu.com/s/1XPlh9ovenJcJELMntx0g-w)（
 提取码：1357）, remember you need an TF card with at least 8G capacity. The information of this image below.
 
-![](Orangepi-zero\versions.png)
+![](Orangepi-zero/versions.png)
 
 ### Step 1
 
 Download and flash the OS image with `balenaEtcher` software to your TF card. Insert your flashed TF card to OrangePi-zero, and power on it. Connect Ethernet cable to OrangePi-zero. And find the ip address of OrangePi-zero from your router.
 
-![](Orangepi-zero\orangepi_zero.jpg)
+![](Orangepi-zero/orangepi_zero.jpg)
 
 ### Step 2
 
