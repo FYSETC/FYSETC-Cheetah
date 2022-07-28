@@ -29,7 +29,7 @@ stm32flash -w firmwares/cheetah1.2.bin -v -i rts,-dtr,dtr /dev/ttyUSB0
 
 Or follow the instructions [here](https://github.com/FYSETC/FYSETC-Cheetah#53-upload-the-firmware) for firmware uploading.
 
-![](Orangepi-zero\cheetah.jpg)
+![](Orangepi-zero/cheetah.jpg)
 
 ### Step 3:
 
