@@ -8,7 +8,7 @@ Before you config the SAMF-OS_OrangePi_zero. You need an TF card with at least 8
 
 Download and flash the OS image with `balenaEtcher` software to your TF card. Insert your flashed TF card to OrangePi-zero and connect Ethernet cable then power on. Find the ip address of OrangePi-zero on your router.
 
-![](Orangepi-zero\orangepi_zero.jpg)
+![](Orangepi-zero/orangepi_zero.jpg)
 
 ### Step 2
 
