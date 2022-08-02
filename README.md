@@ -261,7 +261,7 @@ You can change your config according to you machine base on the generic printer.
 
 ### 5.3 Upload the firmware
 
-We provide several ways to upload the firmware . If you don't have CH340x driver installed, please check here: [CH340 driver](https://www.wch.cn/search?t=all&q=CH340).
+We provide several methods for you to upload the firmware . But first, you need to install CH340x driver, please check here: [CH340 driver](https://www.wch.cn/search?t=all&q=CH340).
 
 #### Method 1:  Upload the firmware with sdcard
 
