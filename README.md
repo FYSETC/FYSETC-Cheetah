@@ -36,6 +36,8 @@ Designed for a single-head 3D printer, many interfaces are reserved for more fea
 
 ## 3. Application
 
+Check `examples` folder for more information.
+
 - 3D printer 
 - CNC Device
 - Other similar machines
