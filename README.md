@@ -1,14 +1,10 @@
 ## 1. Product Introduction
 
----
-
 ![](images/Cheetah_V1.2b_real.png)
 
 Designed for a single-head 3D printer, many interfaces are reserved for more features. Such as AC detection, filament detection, leveling with BL-touch or other sensors.
 
 ## 2. Features
-
----
 
 - Compact size: 101.5mm x 72mm，Compatible with the Creatlity ender 3 motherboard size
 
@@ -40,8 +36,6 @@ Designed for a single-head 3D printer, many interfaces are reserved for more fea
 
 ## 3. Application
 
----
-
 - 3D printer 
 - CNC Device
 - Other similar machines
@@ -49,8 +43,6 @@ Designed for a single-head 3D printer, many interfaces are reserved for more fea
 ## 4. Hardware
 
 ### 4.1 Hardware Reasources
-
----
 
 | Board Name           | Cheetah                            |
 | -------------------- | ---------------------------------- |
@@ -73,8 +65,6 @@ Designed for a single-head 3D printer, many interfaces are reserved for more fea
 | Output               | BED OUT：10A Max ；Heater Out：5A Max |
 
 ### 4.2 Connectors and jumpers define(V1.1)
-
----
 
 ![Cheetah_connectors](images/Cheetah_connector.png)
 ![Cheetah_jumpers](images/Cheetah_jumpers.png)
@@ -179,8 +169,6 @@ Not available.
 
 ## 5. Firmware
 
----
-
 ### 5.1 Marlin
 
 The FYSETC CHEETAH firmware is pre-config for ENDER3 machine, if you want to change the firmware or compile the code yourself , follow the steps.
@@ -273,7 +261,7 @@ You can change your config according to you machine base on the generic printer.
 
 ### 5.3 Upload the firmware
 
-We provide several ways to upload the firmware .
+We provide several ways to upload the firmware . If you don't have CH340x driver installed, please check here: [CH340 driver](https://www.wch.cn/search?t=all&q=CH340).
 
 #### Method 1:  Upload the firmware with sdcard
 
